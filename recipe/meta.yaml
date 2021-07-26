@@ -1,5 +1,5 @@
 {% set name = "vizdet" %}
-{% set version = "0.1.7" %}
+{% set version = "0.1.8" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/vizdet-{{ version }}.tar.gz
-  sha256: 43a1d43df625bfdc9279c87ca93bae68d69579338cd94d002df9582e09dea452
+  sha256: c5c6df978dd3417a9f738d382ea6a20bea8dbad7cdec3be2a26b38c0d34658b7
 
 build:
   number: 0
