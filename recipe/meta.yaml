@@ -7,21 +7,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/vizdet-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/vizdet-{{ version }}.tar.gz
   sha256: c5c6df978dd3417a9f738d382ea6a20bea8dbad7cdec3be2a26b38c0d34658b7
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - numpy >=1.20.3
-    - python >=3.7
+    - python >={{ python_min }}
     - libopencv >=4.5.1
     - opencv >=4.5.1
     - py-opencv >=4.5.1
@@ -33,6 +33,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/tadejsv/vizdet
